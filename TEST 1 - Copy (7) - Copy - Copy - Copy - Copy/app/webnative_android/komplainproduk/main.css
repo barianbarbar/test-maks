@@ -1,0 +1,14 @@
+body {
+  max-width: 100%;
+}
+p {
+  font-family: 'Poppins';
+}
+button {
+  border-radius: 25px !important;
+}
+
+.offcanvas-body {
+  max-height: 80vh; /* mengatur tinggi maksimal offcanvas sebesar 80% dari tinggi viewport */
+  overflow-y: scroll; /* menambahkan scroll bar untuk konten yang lebih panjang */
+}
