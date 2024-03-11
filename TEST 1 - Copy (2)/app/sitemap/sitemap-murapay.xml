@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://murapay.id/</loc>
+    <priority>0.10</priority>
+  </url>
+  <url>
+    <loc>https://murapay.id/kemitraan</loc>
+    <priority>0.20</priority>
+  </url>
+  <url>
+    <loc>https://murapay.id/partnership</loc>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://murapay.id/harga</loc>
+    <priority>0.40</priority>
+  </url>
+  <url>
+    <loc>https://murapay.id/about</loc>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://murapay.id/murakoin</loc>
+    <priority>0.60</priority>
+  </url>
+    <url>
+    <loc>https://apps.murapay.id/kode-referral/MITRA</loc>
+    <priority>0.70</priority>
+  </url>
+</urlset>

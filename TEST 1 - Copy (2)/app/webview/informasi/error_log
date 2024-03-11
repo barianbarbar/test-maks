@@ -1,0 +1,37 @@
+[29-Aug-2023 03:10:27 UTC] PHP Notice:  Undefined index: wtinkouridol in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 5
+[29-Aug-2023 03:10:38 UTC] PHP Notice:  Undefined index: wtinkouridol in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 5
+[29-Aug-2023 03:11:15 UTC] PHP Notice:  Undefined index: wtinkouridol in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 5
+[29-Aug-2023 03:11:34 UTC] PHP Notice:  Undefined index: wtinkouridol in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 5
+[29-Aug-2023 03:25:59 UTC] PHP Notice:  Undefined variable: currentUrl in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 20
+[29-Aug-2023 03:25:59 UTC] PHP Notice:  Undefined variable: redirectUrl in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 23
+[29-Aug-2023 03:25:59 UTC] PHP Notice:  Undefined variable: currentUrl in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 24
+[29-Aug-2023 03:26:25 UTC] PHP Notice:  Undefined variable: currentUrl in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 20
+[29-Aug-2023 03:26:25 UTC] PHP Notice:  Undefined variable: redirectUrl in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 23
+[29-Aug-2023 03:26:25 UTC] PHP Notice:  Undefined variable: currentUrl in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 24
+[29-Aug-2023 03:29:47 UTC] PHP Notice:  Undefined index: currentUrl in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 2
+[29-Aug-2023 03:31:58 UTC] PHP Notice:  Undefined variable: currentUrl in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 8
+[29-Aug-2023 03:33:53 UTC] PHP Notice:  Undefined variable: currentUrl in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 8
+[29-Aug-2023 03:35:53 UTC] PHP Notice:  Undefined index: wtinkouridol in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 3
+[29-Aug-2023 03:36:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function url_encode() in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 10
+[29-Aug-2023 03:36:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function url_encode() in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 7
+[29-Aug-2023 03:36:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function url_encode() in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 7
+[29-Aug-2023 03:37:15 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 9
+[29-Aug-2023 03:37:33 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 9
+[29-Aug-2023 03:37:35 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 9
+[29-Aug-2023 03:38:48 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 9
+[29-Aug-2023 03:38:50 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 9
+[29-Aug-2023 03:38:52 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 9
+[29-Aug-2023 03:38:55 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 9
+[29-Aug-2023 03:39:06 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 9
+[29-Aug-2023 03:53:57 UTC] PHP Notice:  Undefined variable: output in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 11
+[29-Aug-2023 04:22:44 UTC] PHP Notice:  Undefined variable: output in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 12
+[29-Aug-2023 06:47:23 UTC] PHP Notice:  Undefined index: wtinkouridol in /home/murahpay/apps.murapay.id/app/webview/informasi/panduan.php on line 4

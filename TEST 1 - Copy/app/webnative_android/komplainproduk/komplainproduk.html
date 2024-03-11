@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h6 class="my-3" style="color: #f37021" onclick="clickSemuaTopik()"">Lihat Semua Topik</h6>
+      <div class="border p-3 shadow my-3" style="border-radius: 10px">
+        <div class="row">
+          <div class="col-7">
+            <h6 class="m-0 p-0 card-produk"></h6>
+          </div>
+          <div class="col-5 style="background-color: brown;">
+            <p class="card-tgl m-0 rounded d-flex justify-content-center"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p class="m-0 card-tujuan"></p>
+            <div class="row">
+              <div class="col-7">
+                <p class="m-0 card-harga"></p>
+              </div>
+              <div class="col-5">
+                <div
+                  id="card-status"
+                  class="border rounded d-flex justify-content-center"
+                >
+                  <p class="m-0 card-status" style="font-weight: 700"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      <div class="my-3">
+        <h4 class="komplain_text"></h4>
+        <div class="my-3 list-subtopik"></div>
+      </div>
+      <div class="offcanvas offcanvas-bottom h-auto rounded" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="staticBackdropLabel">Informasi</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" onclick=onclicktutup()></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="p-2">
+            <div class="d-flex justify-content-center">
+                <div style="border-radius: 50px;">
+                  <img src="images/bg_inbox_kosong.png" class="img-fluid">
+                </div>
+            </div>
+            <p class="text-center my-2">Anda sedang memiliki sessi aktif chat CS. Lanjutkan percakapan?</p>
+            <div class="row">
+              <div class="col-6">
+                <button class="btn btn-outline-secondary" data-bs-dismiss="offcanvas"  style="width: 100%;" onclick=onclicktutup()>Tutup</button>
+              </div>
+              <div class="col -6">
+                <button class="btn btn-primary" data-bs-dismiss="offcanvas" style="width: 100% ;background-color: #2B3252;" onclick=lanjutlivechat()>Lanjut</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="komplainprodukjs.js"></script>
+  </body>
+</html>

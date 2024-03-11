@@ -1,0 +1,20 @@
+[16-Aug-2023 08:40:09 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type mysqli_result as array in /home/murahpay/apps.murapay.id/getter/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/murahpay/apps.murapay.id/getter/index.php on line 15
+[16-Aug-2023 08:40:10 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type mysqli_result as array in /home/murahpay/apps.murapay.id/getter/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/murahpay/apps.murapay.id/getter/index.php on line 15
+[16-Aug-2023 08:40:11 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type mysqli_result as array in /home/murahpay/apps.murapay.id/getter/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/murahpay/apps.murapay.id/getter/index.php on line 15
+[16-Aug-2023 08:40:21 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type mysqli_result as array in /home/murahpay/apps.murapay.id/getter/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/murahpay/apps.murapay.id/getter/index.php on line 15
+[16-Aug-2023 08:40:22 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type mysqli_result as array in /home/murahpay/apps.murapay.id/getter/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/murahpay/apps.murapay.id/getter/index.php on line 15

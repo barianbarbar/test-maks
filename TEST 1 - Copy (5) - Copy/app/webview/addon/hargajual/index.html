@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>App-Unitedpay</title>
+  <link rel="stylesheet" href="https://unitedtronik.co.id/apps/webview/style/assets/css/style.css">
+  <link rel="stylesheet" href="./assets/vendor/select2/select2.min.css"/>
+  <link rel="stylesheet" href="./assets/css/style.css?v=1.5">
+  <meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+</head>
+
+<body>
+  <!-- App Capsule -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+    </symbol>
+    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+    </symbol>
+    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+    </symbol>
+  </svg>
+  <div id="appCapsule">
+    <div class="section mb-2">
+      <div class="section-title">
+        <div class="alert alert-success d-flex align-items-center mb-2" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+            <use xlink:href="#info-fill" />
+          </svg>
+          <div>
+            R Harga jual adalah harga rekomendasi untuk pelanggan/customer anda. Harga jual akan muncul pada struk dan
+            detail histori transaksi
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <form id="formTentukanHargaJual">
+            <div class="form-group boxed">
+              <div class="input-wrapper">
+                <label class="label" for="selectmenu">Nama menu</label>
+                <select class="form-control custom-select decorated" id="selectmenu" onchange="selectMenu()">
+                  <option value="-1">Pilih Menu</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group boxed d-none" id="layout_produk">
+              <div class="input-wrapper">
+                <label class="label" for="selectproduk">Produk</label>
+                <select class="form-control custom-select" id="selectproduk" onchange="selectProduk()">
+                </select>
+              </div>
+            </div>
+            <div class="form-group boxed d-none" id="layoutnominalproduk">
+              <div class="input-wrapper">
+                <label class="label" for="selectnominal">Detail Produk</label>
+                <select class="form-control custom-select" id="selectnominal" onchange="selectNominalProduk()">
+                </select>
+              </div>
+            </div>
+            <div class="form-group boxed">
+              <div class="input-wrapper d-none" id="layout_harga_default">
+                <label class="label ms-6" for="hargadefault">Harga defaut</label>
+                <div class="row justify-content-between">
+                  <div class="col-8">
+                    <div class="text-muted ms-6">
+                      Atur sesuai harga pasar
+                    </div>
+                  </div>
+                  <div class="col-4 text-end">
+                    <div class="form-check form-switch ms-2">
+                      <input class="form-check-input" type="checkbox" id="checkbox-1" onclick="clikCheckbox()">
+                      <label class="form-check-label" for="checkbox-1"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group boxed d-none" id="layout_keuntungan">
+                <div class="input-wrapper">
+                  <label class="label" for="keuntungan">Keuntungan (Rp)</label>
+                  <input type="text" class="form-control" id="keuntungan" pattern="[0-9]*" inputmode="numeric"
+                    autocomplete="off" placeholder="Rp 0">
+                  <div class="invalid-feedback ms-6"></div>
+                  <i class="clear-input">
+                    <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                  </i>
+                </div>
+              </div>
+              <div id="layout_harga_produk" class="form-group boxed d-none">
+                <div class="input-wrapper">
+                  <label class="label" for="hargaProduk">Harga Produk (Rp)</label>
+                  <input type="text" autocomplete="off" class="form-control" id="hargaProduk" placeholder="Rp 0"
+                    disabled>
+                  <i class="clear-input">
+                    <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                  </i>
+                </div>
+              </div>
+              <div id="layout_harga_jual" class="form-group boxed d-none">
+                <div class="input-wrapper">
+                  <label class="label" for="harga_jual">Harga jual (Rp)</label>
+                  <input type="text" autocomplete="off" class="form-control" id="harga_jual" placeholder="Rp 0"
+                    oninput="rupiahFormat(this.value,'harga_jual');" disabled>
+                  <span class="text-secondary">
+                    <small>Harga setelah pembulatan</small>
+                  </span>
+                  <i class="clear-input">
+                    <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                  </i>
+                </div>
+              </div>
+              <div id="layout_admin" class="form-group boxed d-none">
+                <div class="input-wrapper">
+                  <label class="label" for="admin">Biaya Admin (Rp)</label>
+                  <input type="text" autocomplete="off" class="form-control" id="admin" placeholder="Rp 0" disabled>
+                  <i class="clear-input">
+                    <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                  </i>
+                </div>
+              </div>
+              <div id="layout_total" class="form-group boxed d-none">
+                <div class="input-wrapper">
+                  <label class="label" for="total">Total Admin (Rp)</label>
+                  <input type="text" autocomplete="off" class="form-control" id="total" placeholder="Rp 0" disabled>
+                  <span class="text-secondary">
+                    <small>Harga setelah pembulatan</small>
+                  </span>
+                  <i class="clear-input">
+                    <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                  </i>
+                </div>
+              </div>
+              <div class="form-group boxed">
+                <button type="button" id="btnSimpan" class="btn btn-danger btn-block disabled">
+                  SIMPAN
+                </button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="listview-title mt-2">Aktifitas terakhir</div>
+  <div id="logList"></div>
+  <div class="section mt-2 mb-2"></div>
+
+  <script src="./assets/vendor/jquery/jquery.slim.min.js"></script>
+  <script src="./assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/select2/select2.min.js"></script>
+  <script src="./assets/js/index.js?v=2.2"></script>
+  <script src="./assets/js/select2.js?v=1.0"></script>
+</body>
+
+</html>
