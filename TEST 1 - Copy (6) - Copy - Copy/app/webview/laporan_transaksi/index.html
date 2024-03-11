@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/style.css" rel="stylesheet">
+</head>
+<body class="select-none">
+  <section id="top-loading" class="mt-px">
+    <div class="animate-pulse space-x-4">
+      <div class="mt-1 h-2 bg-[#FF6200EE] rounded"></div>
+    </div>
+  </section>
+  <section class="mt-px">
+    <div class="flex flex-row">
+      <div onclick="myFunction1('filter')" class="bg-[#2B3252] basis-1/2 p-3 m-3 text-white overflow-auto rounded-xl shadow-sm shadow-indigo-500/40">
+        <div class="flex space-x-4 justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM7.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8.25 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM9.75 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM10.5 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12.75 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM14.25 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 13.5a.75.75 0 100-1.5.75.75 0 000 1.5z" />
+          <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clip-rule="evenodd" />
+          </svg>
+          <div>Filter</div>
+        </div>
+      </div>
+    <div id="download" onclick="myFunction3('download')" class="bg-[#2B3252] basis-1/2 p-3 m-3 text-white overflow-auto rounded-xl text-center shadow-sm shadow-indigo-500/40">
+      <div class="flex space-x-4 justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+        </svg>
+        <div>Download</div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section id="layout_total_penjualan">
+    <div class="mx-3 border-solid border-2 shadow-sm rounded-2xl">
+      <div class="py-3">
+        <p class="text-center font-bold text-xl">Periode</p>
+        <p class="text-center text-sm mt-1 text-black" id="periode">loading...</p>
+      </div>
+    </div>
+    <div class="flex flex-row">
+      <div class="basis-1/2 m-3 border-dashed  border-2 shadow-sm border-gray-300 rounded-xl">
+        <div class="p-3">
+          <p class="text-center">Total Penjualan</p>
+          <p class="font-bold text-center" id="total_penjualan">loading...</p>
+        </div>
+      </div>
+      <div class="basis-1/2 m-3 border-dashed  border-2 shadow-sm border-gray-300 rounded-xl">
+        <div class="p-3">
+          <p class="text-center">Total Keuntungan</p>
+          <p class="font-bold text-center" id="total_keuntungan">loading...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="m-3">
+    <div id="page_not_found"></div>
+  </section>
+  <section>
+    <div id="html_list"></div>
+  </section>
+<!-- JavaScript-->
+<script>
+  showTopLoading(true)
+  function showTopLoading(isLoading){
+    if(isLoading) {
+      document.getElementById("top-loading").style.display = 'inline';
+    }else{
+        document.getElementById("top-loading").style.display = 'none';
+    }
+  }
+  var isNotfound = false;
+  function show_doodle(){
+    isNotfound = true;
+    const html_not_found = '<div class="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16">'+
+            '<div class="xl:pt-24 w-full xl:w-1/2 relative pb-12 lg:pb-0">'+
+                '<div class="relative">'+
+                    '<div class="absolute">'+
+                        '<div class="">'+
+                            '<h1 class="my-2 text-gray-800 font-bold text-2xl">'+
+                                'Upsss...'+
+                                'Data yang Anda cari tidak ditemukan! Silakan klik tombol Filter untuk mengubah tanggal'+
+                            '</h1>'+
+                            '<p class="my-2 text-gray-800">Hubungi cs kami untuk mendapatkan bantuan</p>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div>'+
+                        '<img src="https://i.ibb.co/G9DC8S0/404-2.png" />'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>'
+      const layout_total_penjualan = document.getElementById('layout_total_penjualan')
+      const html_list = document.getElementById('html_list')
+      const page_not_found = document.getElementById('page_not_found')
+      page_not_found.innerHTML = html_not_found
+      html_list.style.display = 'none';
+      layout_total_penjualan.style.display = 'none';
+      page_not_found.style.display = 'inline';
+  }
+
+  function hide_doodle(){
+    isNotfound = false;
+    const layout_total_penjualan = document.getElementById('layout_total_penjualan')
+    const page_not_found = document.getElementById('page_not_found')
+    layout_total_penjualan.style.display = 'inline';
+    page_not_found.style.display = 'none';
+  }
+
+  function updateTotal(total_penjualan, total_keuntungan){
+    console.log("total_penjualan=>"+total_penjualan)
+    console.log("total_keuntungan=>"+total_keuntungan)
+    document.getElementById('total_penjualan').innerHTML = formatRupiah(total_penjualan,".")
+    document.getElementById('total_keuntungan').innerHTML = formatRupiah(total_keuntungan,".")
+  }
+
+  var final_json = []
+  /*scroll webview*/
+  // jangan mengganti limit, karena anda nanti harus mengganti limit di .NET API
+  let currentPage = 1;
+  const limit = 10;
+  let total = 0;
+
+  function myFunction3(value){
+    if(isNotfound==false){
+      try {
+        Android.downloadLaporan()
+      } catch (error) {
+        
+      }
+    }
+  }
+
+  function myFunction1(value){
+    posisi = -1
+    try {
+      Android.filter()
+    } catch (error) {
+      
+    }
+  };
+
+  function removeList(){
+    currentPage = 1;
+    document.getElementById('html_list').innerHTML = "";
+  }
+
+  function myFunction2(index){
+    //console.log(event.target.parentNode.parentNode.parentNode)
+    //event.target.parentNode.parentNode.parentNode.remove()
+    console.log("posisi=>"+index)
+    final_json[index].harga_jual = "0"
+    console.log(final_json[index])
+    var data = JSON.stringify(final_json[index])
+    console.log("data=>"+data)
+    try {
+      Android.ubahHarga("hargajual"+index, data)
+    } catch (error) {
+      console.log("E_myFunction2"+error)
+    }
+  };
+
+  function updateHargaJual(id, harga_jual, new_keuntungan){
+    try {
+      console.log("updateElement=>" + id)
+      console.log("harga_jual=>" + harga_jual)
+      console.log("new_keuntungan=>" + new_keuntungan)
+      document.getElementById(id).innerHTML = formatRupiah(harga_jual, ".")
+      document.getElementById("untung"+replaceNonNumeric(id)).innerHTML = formatRupiah(new_keuntungan, ".")
+    } catch (error) {
+        console.log(error)
+    }
+  };
+
+  const hasMoreQuotes = (page, limit, total) => {
+    const startIndex = (page - 1) * limit + 1;
+    return total === 0 || startIndex < total;
+  };
+
+  window.addEventListener('scroll', () => {
+        const {
+            scrollTop,
+            scrollHeight,
+            clientHeight
+        } = document.documentElement;
+
+        if (scrollTop + clientHeight >= scrollHeight - 5 &&
+            hasMoreQuotes(currentPage, limit, total)) {
+            //getData(currentPage)
+        }
+    }, {
+        passive: true
+  });
+
+  function replaceNonNumeric(angka){
+    return angka.toString().replace(/[^,\d]/g, '').toString();
+  }
+
+  /* Fungsi formatRupiah */
+  function formatRupiah(angka, prefix){
+			var number_string = replaceNonNumeric(angka)
+			split   		= number_string.split(','),
+			sisa     		= split[0].length % 3,
+			rupiah     	= split[0].substr(0, sisa),
+			ribuan     	= split[0].substr(sisa).match(/\d{3}/gi);
+
+			// tambahkan titik jika yang di input sudah menjadi angka ribuan
+			if(ribuan){
+				separator = sisa ? '.' : '';
+				rupiah += separator + ribuan.join('.');
+			}
+
+			rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+      if(angka.startsWith("-")){
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp' + "-" +  rupiah : '');
+      }
+			return prefix == undefined ? rupiah : (rupiah ? 'Rp' + rupiah : '');
+	};
+
+  /* Fungsi format tanggal */
+  function dateformat(string_date) {
+      var date      = new Date(string_date)
+      var strArray  = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'];
+      var d         = date.getDate();
+      var m         = strArray[date.getMonth()];
+      var y         = date.getFullYear();
+      var hour      = date.getHours();
+      var minute    = date.getMinutes();
+      return (d <= 9 ? '0' + d : d) + ' ' + m + ' ' + y + ' | ' + (hour <= 9 ? '0' + hour : hour) + ':' + (minute <= 9 ? '0' + minute : minute) ;
+  }
+
+  function getData(currentPage){
+    // try {
+    //   console.log(currentPage)
+    // } catch (error) {
+      
+    // }
+    try {
+      var data = Android.fetchData(currentPage)
+      console.log("R_getData"+data)
+    } catch (error) {
+      console.log("E_getData"+error)
+    }
+    //return '{"rc":"00","rd":"sukses data ditemukan","periode":"01 Jan 2022  -  01 Dec 2023","total_penjualan":"326955","total_keuntungan":"0","data":[{"kode":"0","nama_produk":" INDOSAT 5.000","tanggal":"2023-01-05 21:01:56","harga":"5805","harga_jual":"5805","keuntungan":"0"},{"kode":"0","nama_produk":" INDOSAT 10.000","tanggal":"2023-01-03 09:52:47","harga":"10775","harga_jual":"10775","keuntungan":"0"},{"kode":"0","nama_produk":" INDOSAT 5.000","tanggal":"2023-01-02 12:51:56","harga":"5805","harga_jual":"5805","keuntungan":"0"},{"kode":"0","nama_produk":" INDOSAT 5.000","tanggal":"2023-01-01 21:45:11","harga":"5805","harga_jual":"5805","keuntungan":"0"},{"kode":"0","nama_produk":" INDOSAT 5.000","tanggal":"2022-12-31 21:28:06","harga":"5805","harga_jual":"5805","keuntungan":"0"},{"kode":"0","nama_produk":" INDOSAT 5.000","tanggal":"2022-12-31 21:22:32","harga":"5805","harga_jual":"5805","keuntungan":"0"},{"kode":"0","nama_produk":"Freedom Internet 5.5 GB","tanggal":"2022-12-31 13:17:55","harga":"28400","harga_jual":"28400","keuntungan":"0"},{"kode":"0","nama_produk":" TRANSFER BCA","tanggal":"2022-12-10 15:00:05","harga":"53420","harga_jual":"53420","keuntungan":"0"},{"kode":"0","nama_produk":" TRANSFER MANDIRI","tanggal":"2022-11-01 10:09:10","harga":"13460","harga_jual":"13460","keuntungan":"0"},{"kode":"0","nama_produk":"Freedom Internet 5.5 GB","tanggal":"2022-10-24 18:54:39","harga":"28475","harga_jual":"28475","keuntungan":"0"},{"kode":"0","nama_produk":" Gopay Customer","tanggal":"2022-10-10 17:56:34","harga":"30960","harga_jual":"30960","keuntungan":"0"},{"kode":"0","nama_produk":" BY.U 10.000","tanggal":"2022-09-26 17:02:18","harga":"10575","harga_jual":"10575","keuntungan":"0"},{"kode":"0","nama_produk":" Gopay Customer","tanggal":"2022-09-12 19:10:44","harga":"11000","harga_jual":"11000","keuntungan":"0"},{"kode":"0","nama_produk":" Gopay Customer","tanggal":"2022-09-12 18:46:43","harga":"11000","harga_jual":"11000","keuntungan":"0"},{"kode":"0","nama_produk":"FREEDOM COMBO 6 GB","tanggal":"2022-09-09 19:38:52","harga":"30275","harga_jual":"30275","keuntungan":"0"},{"kode":"0","nama_produk":" BY.U 10.000","tanggal":"2022-09-07 16:37:48","harga":"10600","harga_jual":"10600","keuntungan":"0"},{"kode":"0","nama_produk":" BY.U 10.000","tanggal":"2022-09-07 10:25:45","harga":"10600","harga_jual":"10600","keuntungan":"0"},{"kode":"0","nama_produk":" BY.U 5.000","tanggal":"2022-08-29 19:12:15","harga":"5600","harga_jual":"5600","keuntungan":"0"},{"kode":"0","nama_produk":" BY.U 10.000","tanggal":"2022-08-29 19:04:16","harga":"10600","harga_jual":"10600","keuntungan":"0"},{"kode":"0","nama_produk":" BY.U 10.000","tanggal":"2022-08-25 17:13:33","harga":"10600","harga_jual":"10600","keuntungan":"0"},{"kode":"0","nama_produk":" Gopay Customer","tanggal":"2022-08-24 17:48:46","harga":"10795","harga_jual":"10795","keuntungan":"0"},{"kode":"0","nama_produk":" Gopay Customer","tanggal":"2022-08-24 13:31:09","harga":"10795","harga_jual":"10795","keuntungan":"0"}]}';
+  }
+
+  show_doodle()
+  var posisi = -1;
+  function olahData(){
+    try {
+      removeList()
+    } catch (error) {
+      
+    }
+    try {
+      response = Android.getProduk()
+      console.log("R_getProduk"+response)
+    } catch (error) {
+      console.log("E_getProduk"+error)
+    }
+    if(posisi<0){
+      final_json = [];
+    }
+    const obj = JSON.parse(response);
+    var items = obj.data
+    final_json = [].concat(final_json,items)
+    const ul = document.createElement('ul');
+    const html_list = document.getElementById('html_list');
+    html_list.style.display = 'inline';
+    html_list.appendChild(ul);
+
+    hide_doodle()
+    if(items.length>0){
+      document.getElementById('periode').innerHTML = obj.periode
+      document.getElementById('total_penjualan').innerHTML = formatRupiah(obj.total_penjualan,".")
+      document.getElementById('total_keuntungan').innerHTML = formatRupiah(obj.total_keuntungan,".")
+      currentPage++;
+    }else{
+      if(posisi<=0){
+        console.log("posisi " + items.length)
+        show_doodle()
+      }
+    }
+    items.forEach((item, index) => {
+        var kode        = item.kode;
+        var harga_beli  = item.harga
+        var harga_jual  = item.harga_jual
+        var keuntungan  = item.keuntungan
+        var kode = item.kode;
+        var li = document.createElement('li');
+        ul.appendChild(li);
+        posisi++
+        li.innerHTML += '<div class="basis-1/2 m-3 shadow-md border border-gray-300 rounded-xl">'+
+        '<div class="pl-3 py-2">'+
+          '<p class="font-bold text-xl">'+item.nama_produk+'</p>'+
+          '<p class="text-sm">'+dateformat(item.tanggal)+'</p>'+
+          '<p class="font-semibold text-sm mt-3 font-bold">'+formatRupiah(harga_beli,".")+'</span></p>'+
+        '</div>'+
+        '<div class="bg-gray-300 rounded-lg p-3 grid grid-cols-2 m-1">'+
+          '<div class="justify-self-stretch">'+
+            '<div class="grid grid-cols-2">'+
+              '<div>'+
+                '<p class="text-sm">Harga Jual:</p>'+
+              '</div>'+
+              '<div class="ml-2">'+
+                '<p id="hargajual'+posisi+'" class="text-sm justify-end">'+formatRupiah(harga_jual,".")+'</p>'+
+              '</div>'+
+              '<div>'+
+                '<p class="text-sm">Keuntungan:</p>'+
+              '</div>'+
+              '<div class="ml-2">'+
+                '<p id="untung'+posisi+'" class="text-sm justify-end font-semibold">'+formatRupiah(keuntungan,".")+'</p>'+
+              '</div>'+
+            '</div>'+
+          '</div>'+
+        '<div class="flex justify-end">'+
+          '<button onclick="myFunction2('+posisi+')" class="bg-[#2B3252] p-2 rounded-xl text-white text-sm shadow-sm shadow-indigo-500/40">ubah harga</button>'+
+        '</div>'+
+        '</div>'+
+      '</div>'
+    });
+  }
+  getData(0)
+  showTopLoading(false)
+</script>
+</body>
+</html>

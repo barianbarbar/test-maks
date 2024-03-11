@@ -1,0 +1,187 @@
+{
+  "judul": "Dompet Digital",
+  "keterangan": "",
+  "template": "2",
+  "isPromo": true,
+  "isFavorit": true,
+  "isTerjadwal": true,
+  "settingPin": {
+    "title": "Pin Transaksi",
+    "hint": "Contoh: 123456",
+    "tipe": "number"
+  },
+  "config": {
+    "proses_string": "proses",
+    "is_searching": false,
+    "is_favorit": true,
+    "is_terjadwal": true,
+    "is_voucher": true
+  },
+  "checkout": {
+    "checkout_saldoawal_string": "Saldo Awal",
+    "checkout_tujuan_string": "Tujuan",
+    "checkout_produk_string": "Produk",
+    "checkout_harga_string": "Harga",
+    "checkout_xp_string": "Mendapat [exp] EXP",
+    "checkout_saldoakhir_string": "Saldo Akhir"
+  },
+  "data": [
+    {
+      "kode_operator": "DANAP",
+      "operator": "DANA",
+      "icon": "https://mura.co.id/app/img/dana.png",
+      "keterangan": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "format": "[kode_operator].[tujuan].[kode].[pin]",
+      "isNominalBebas": true,
+      "settingTujuan": {
+        "title": "Nomor HP",
+        "hint": "Contoh: 081234567890",
+        "isKontak": true,
+        "isScan": true,
+        "isHlr": false,
+        "tipe": "phone"
+      },
+      "settingNominal": {
+        "title": "Masukkan Nominal",
+        "hint": "Contoh 10.000",
+        "isEdit": true,
+        "tipe": "number"
+      },
+      "cek": {
+        "isCek": true,
+        "tipeCek": "1"
+      },
+      "detailGrid": 2,
+      "detail": [
+        {
+          "tag": "Dana Regular",
+          "kode": "10000",
+          "produk": "10.000",
+          "exp": "+50 exp",
+          "harga": "10500"
+        },
+        {
+          "tag": "Dana Regular",
+          "kode": "15000",
+          "produk": "15.000",
+          "exp": "+50 exp",
+          "harga": "15500"
+        },
+        {
+          "tag": "Dana Regular",
+          "kode": "20000",
+          "produk": "20.000",
+          "exp": "+50 exp",
+          "harga": "20500"
+        },
+        {
+          "tag": "Dana Regular",
+          "kode": "30000",
+          "produk": "30.000",
+          "exp": "+50 exp",
+          "harga": "30500"
+        },
+        {
+          "tag": "Dana Regular",
+          "kode": "25000",
+          "produk": "25.000",
+          "exp": "+100 exp",
+          "harga": "25500"
+        },
+        {
+          "tag": "Dana Regular",
+          "kode": "50000",
+          "produk": "50.000",
+          "exp": "+120 exp",
+          "harga": "50500"
+        },
+        {
+          "tag": "Dana Regular",
+          "kode": "100000",
+          "produk": "100.000",
+          "exp": "+120 exp",
+          "harga": "100500"
+        }
+      ]
+    },
+    {
+      "kode_operator": "SHOP",
+      "operator": "Shopee",
+      "icon": "https://mura.co.id/app/img/shopee.png",
+      "keterangan": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "format": "[kode].[tujuan].[pin]",
+      "isNominalBebas": false,
+      "settingTujuan": {
+        "title": "Nomor HP",
+        "hint": "Contoh: 122021102174",
+        "isKontak": true,
+        "isScan": true,
+        "isHlr": false,
+        "tipe": "number"
+      },
+      "cek": {
+        "isCek": false,
+        "tipeCek": "1"
+      },
+      "detailGrid": 2,
+      "detail": [
+        {
+          "tag": "Shopee Regular",
+          "kode": "SHOP5",
+          "produk": "5.000",
+          "exp": "+50 exp",
+          "harga": "5500"
+        },
+        {
+          "tag": "Shopee Promo",
+          "kode": "SHOP10",
+          "produk": "10.000",
+          "exp": "+50 exp",
+          "harga": "10500"
+        },
+        {
+          "tag": "Shopee Promo",
+          "kode": "SHOP15",
+          "produk": "15.000",
+          "exp": "+50 exp",
+          "harga": "15500"
+        },
+        {
+          "tag": "Shopee Promo",
+          "kode": "SHOP20",
+          "produk": "20.000",
+          "exp": "+50 exp",
+          "harga": "20500"
+        },
+        {
+          "tag": "Shopee Promo",
+          "kode": "SHOP30",
+          "produk": "30.000",
+          "exp": "+50 exp",
+          "harga": "30500"
+        },
+        {
+          "tag": "Shopee Promo",
+          "kode": "SHOP25",
+          "produk": "25.000",
+          "exp": "+100 exp",
+          "harga": "25500"
+        },
+        {
+          "tag": "Shopee Promo",
+          "kode": "SHOP50",
+          "produk": "50.000",
+          "exp": "+120 exp",
+          "harga": "50500"
+        },
+        {
+          "tag": "Shopee Promo",
+          "kode": "SHOP100",
+          "produk": "100.000",
+          "exp": "+120 exp",
+          "harga": "100500"
+        }
+      ]
+    }
+  ]
+}

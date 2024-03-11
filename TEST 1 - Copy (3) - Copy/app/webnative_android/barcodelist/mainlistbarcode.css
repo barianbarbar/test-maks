@@ -1,0 +1,27 @@
+body {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.75em !important;
+}
+
+.fontsmall{
+  font-size: 0.9rem;
+}
+.textabu{
+  color: white;
+}
+
+.backgroundprimary{
+  background-color: #2B3252;
+}
+
+.backgroundprimary:active{
+   background-color: #F37021; 
+
+}
+
+.onclickprimary:active{
+  background-color: #999999;
+}
+
+
+

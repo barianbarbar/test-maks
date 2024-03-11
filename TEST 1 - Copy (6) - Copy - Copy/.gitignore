@@ -1,0 +1,9 @@
+/app/addon/images/*.jpg
+/app/addon/images/*.png
+/app/addon/feedback/*.jpg
+/app/addon/feedback/*.png
+/app/addon/images/*.JPG
+/app/addon/images/*.jpeg
+/app/addon/images/*.png
+/app/kyc2/*
+/app/piutang/*

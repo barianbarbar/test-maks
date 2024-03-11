@@ -1,0 +1,32 @@
+[26-Jan-2024 04:41:47 UTC] PHP Parse error:  syntax error, unexpected 'exit' (T_EXIT), expecting ';' or ',' in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 10
+[26-Jan-2024 04:42:35 UTC] PHP Parse error:  syntax error, unexpected 'exit' (T_EXIT), expecting ';' or ',' in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 10
+[26-Jan-2024 09:13:13 UTC] PHP Warning:  move_uploaded_file(./logo_outlet/1000000036.jpg): failed to open stream: No such file or directory in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 53
+[26-Jan-2024 09:13:13 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php4hR4nr' to './logo_outlet/1000000036.jpg' in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 53
+[26-Jan-2024 09:14:12 UTC] PHP Warning:  move_uploaded_file(./logo_outlet/1000000035.jpg): failed to open stream: No such file or directory in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 53
+[26-Jan-2024 09:14:12 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpWe8xfb' to './logo_outlet/1000000035.jpg' in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 53
+[26-Jan-2024 09:14:30 UTC] PHP Warning:  move_uploaded_file(./logo_outlet/1000000036.jpg): failed to open stream: No such file or directory in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 53
+[26-Jan-2024 09:14:30 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php2FxTeC' to './logo_outlet/1000000036.jpg' in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 53
+[26-Jan-2024 09:14:45 UTC] PHP Warning:  move_uploaded_file(./logo_outlet/1000000035.jpg): failed to open stream: No such file or directory in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 53
+[26-Jan-2024 09:14:45 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpcgwvr4' to './logo_outlet/1000000035.jpg' in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 53
+[26-Jan-2024 10:43:55 UTC] PHP Notice:  Undefined variable: targetFile in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 29
+[26-Jan-2024 10:43:55 UTC] PHP Notice:  Undefined index: kode_reseller in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 32
+[26-Jan-2024 10:44:00 UTC] PHP Notice:  Undefined variable: targetFile in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 29
+[26-Jan-2024 10:44:00 UTC] PHP Notice:  Undefined index: kode_reseller in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 32
+[26-Jan-2024 10:44:48 UTC] PHP Notice:  Undefined variable: targetFile in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 29
+[26-Jan-2024 10:44:48 UTC] PHP Notice:  Undefined index: kode_reseller in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 32
+[26-Jan-2024 10:45:21 UTC] PHP Notice:  Undefined variable: targetFile in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 29
+[26-Jan-2024 10:45:21 UTC] PHP Notice:  Undefined index: kode_reseller in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 32
+[26-Jan-2024 10:47:01 UTC] PHP Notice:  Undefined variable: targetFile in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 29
+[26-Jan-2024 10:48:26 UTC] PHP Notice:  Undefined variable: imageFileType in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 30
+[29-Jan-2024 07:07:47 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error: Not a JPEG file: starts with 0x89 0x50 in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 13
+[29-Jan-2024 07:07:47 UTC] PHP Warning:  imagecreatefromjpeg(): 'logo_outlet/MP0000002.png' is not a valid JPEG file in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 13
+[29-Jan-2024 07:07:47 UTC] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, bool given in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 16
+[29-Jan-2024 07:07:47 UTC] PHP Warning:  imagedestroy() expects parameter 1 to be resource, bool given in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 22
+[29-Jan-2024 07:16:27 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error: Not a JPEG file: starts with 0x89 0x50 in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 13
+[29-Jan-2024 07:16:27 UTC] PHP Warning:  imagecreatefromjpeg(): 'logo_outlet/MP0000002.png' is not a valid JPEG file in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 13
+[29-Jan-2024 07:16:27 UTC] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, bool given in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 16
+[29-Jan-2024 07:16:27 UTC] PHP Warning:  imagedestroy() expects parameter 1 to be resource, bool given in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 22
+[29-Jan-2024 07:43:21 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error: Not a JPEG file: starts with 0x89 0x50 in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 13
+[29-Jan-2024 07:43:21 UTC] PHP Warning:  imagecreatefromjpeg(): 'logo_outlet/MP0000002.png' is not a valid JPEG file in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 13
+[29-Jan-2024 07:43:21 UTC] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, bool given in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 16
+[29-Jan-2024 07:43:21 UTC] PHP Warning:  imagedestroy() expects parameter 1 to be resource, bool given in /home/murahpay/apps.murapay.id/app/image/struk/upload/upload.php on line 22

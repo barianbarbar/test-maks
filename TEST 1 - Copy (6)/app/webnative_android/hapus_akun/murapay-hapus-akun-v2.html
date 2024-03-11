@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Murapay</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- App Capsule -->
+    <div id="appCapsule">
+        <div class="section">
+            <div class="section-title">Syarat & Ketentuan Penghapusan Akun</div>
+            <div class="card">
+                <div class="card-body">
+                    <p>Harap baca ketentuan berikut ini sebelum melakukan permintaan Penghapusan Akun!</p>
+                    <p>Penghapusan Akun akan diproses dan divalidasi secara manual dalam waktu 7x24 Jam.</p>
+                    <p>Akun yang sudah terhapus tidak akan bisa kembali. Segala data pribadi yang tersimpan pada database akan kami Hapus sehingga tidak dapat dipulihkan lagi!</p>
+                    <p>Selama masa pengecekan Akun Anda tidak dapat dilogin.</p>
+                    <p>Pendaftaran member baru dengan Nomer HP dan Email yang sama hanya bisa dilakukan setelah menerima informasi penghapusan Akun selesai.</p>
+                    <p>Informasi mengenai penghapusan Akun akan kami kirimkan melalui Email yang terdaftar.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section mt-2 mb-2">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group boxed">
+                            <div class="input-wrapper">
+                                <label class="label" for="textarea4b">*Alasan/Keterangan</label>
+                                <textarea id="id_ket" rows="2" class="form-control"
+                                    placeholder=""></textarea>
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                    </form>
+                    <button disabled id="myBtn" type="button" class="btn btn-primary btn-block">HAPUS AKUN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * App Capsule -->
+</body>
+<script>
+    // get reference to button
+    var btn = document.getElementById("myBtn");
+    var id_ket = document.getElementById("id_ket");
+	// add event listener for input text"
+    id_ket.addEventListener("input", validate);
+    // add event listener for the button, for action "click"
+	btn.addEventListener("click", displayMessage);
+    const ket = document.getElementById('id_ket');
+
+    function validate(){
+        if(ket.value === ""){
+            btn.setAttribute("disabled","disabled");
+        } else {
+            btn.removeAttribute("disabled"); 
+        }
+    }
+    function displayMessage(){
+        try {
+            Android.hapus(ket.value);
+        } catch (error) {
+            console.log(error);
+        } 
+    }
+   
+</script>
+</html>

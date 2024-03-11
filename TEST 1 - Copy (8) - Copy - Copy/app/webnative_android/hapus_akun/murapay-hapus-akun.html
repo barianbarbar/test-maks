@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Murapay</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- App Capsule -->
+    <div id="appCapsule">
+        <div class="section">
+            <div class="section-title">Syarat & Ketentuan Penghapusan Akun</div>
+            <div class="card">
+                <div class="card-body">
+                    <p>Harap baca ketentuan berikut ini sebelum melakukan permintaan Penghapusan Akun!</p>
+                    <p>Penghapusan Akun akan diproses dan divalidasi secara manual dalam waktu 7 x 24 Jam. Selama proses validasi berlangsung, Anda tidak akan bisa login ke dalam akun Anda.</p>
+                    <p>Harap kosongkan saldo Anda terlebih dahulu sebelum melakukan permintaan Penghapusan Akun. Kami tidak bertanggung jawab atas saldo yang masih mengendap pada Akun yang telah dihapus.</p>
+                    <p>Dalam rangka memenuhi kewajiban MuraPay dalam menaati peraturan perundang-undangan yang berlaku di Republik Indonesia, terutama pelaporan dan informasi perpajakan, kami tidak menghapus data informasi pengguna secara keseluruhan.</p>
+                    <p>Data email dan nomor HP yang telah dinonaktifkan maupun yang masih dalam proses validasi Penghapusan Akun tidak dapat digunakan untuk mendaftar kembali sebagai Akun baru.</p>
+                    <p>Kami berharap agar Anda tetap mengaktifkan akun MuraPay Anda dan terus melakukan transaksi online untuk berbagai produk yang tersedia di dalam aplikasi MuraPay. Kami selalu siap mendengar  masukan dan saran Anda untuk peningkatan kualitas aplikasi dan layanan melalui live chat atau Whatsapp di nomor 0813-2970-1020.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section mt-2 mb-2">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group boxed">
+                            <div class="input-wrapper">
+                                <label class="label" for="textarea4b">Alasan/Keterangan</label>
+                                <textarea id="id_ket" rows="2" class="form-control"
+                                    placeholder=""></textarea>
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                    </form>
+                    <button id="btn_hapus" type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#DialogKonfirmasi">HAPUS AKUN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * App Capsule -->
+    <!-- * Dialog Konfirmasi -->
+    <div class="modal fade dialogbox" id="DialogKonfirmasi" data-bs-backdrop="static" tabindex="-1" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ketik kata "SETUJU" untuk melanjutkan!</h5>
+                </div>
+                <div class="modal-body">
+                    <input id="id_konfirmasi" rows="2" class="form-control"placeholder=""></input>
+                        <i class="clear-input">
+                            <ion-icon name="close-circle"></ion-icon>
+                        </i>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-inline">
+                        <button class="btn btn-text-secondary" data-bs-dismiss="modal">BATAL</button>
+                        <button id="btn_kirim" class="btn btn-text-primary" data-bs-dismiss="modal">PROSES</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+</body>
+<script>
+    var btn_hapus = document.getElementById("btn_hapus");
+    btn_hapus.setAttribute("disabled","disabled");
+    var btn_kirim = document.getElementById("btn_kirim");
+    btn_kirim.setAttribute("disabled","disabled");
+
+    var id_ket = document.getElementById("id_ket");
+    btn_hapus.setAttribute("disabled","disabled");
+    var id_konfirmasi = document.getElementById("id_konfirmasi");
+
+	// add event listener for input text"
+    id_ket.addEventListener("input", validate);
+    id_konfirmasi.addEventListener("input", validate2);
+
+    // add event listener for the button, for action "click"
+	btn_kirim.addEventListener("click", actionsend);
+    const text_ket = document.getElementById('id_ket');
+    const text_konfirmasi = document.getElementById('id_konfirmasi');
+
+    function validate(){
+        if(text_ket.value === ""){
+            btn_hapus.setAttribute("disabled","disabled");
+        } else {
+            btn_hapus.removeAttribute("disabled"); 
+        }
+    }
+
+    function validate2(){
+        console.log(text_konfirmasi.value.toUpperCase())
+        if(text_konfirmasi.value.toUpperCase() === "SETUJU"){
+            btn_kirim.removeAttribute("disabled"); 
+        }else{
+            btn_kirim.setAttribute("disabled","disabled");
+        }
+    }
+
+    function actionsend(){
+        if(text_konfirmasi.value.toUpperCase() === "SETUJU"){
+            try {
+                Android.hapus(text_ket.value);
+            } catch (error) {
+                console.log(error);
+            } 
+        }
+    }
+</script>
+</html>
